@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import HeroSection from '../components/HeroSection';
 import ServicesSection from '../components/ServicesSection';
@@ -11,10 +12,12 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Index = () => {
-  // Scroll to top when the page loads
+  const { pathname } = useLocation();
+
+  // Scroll to top when the page loads or route changes
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [pathname]);
 
   return (
     <AnimatePresence>

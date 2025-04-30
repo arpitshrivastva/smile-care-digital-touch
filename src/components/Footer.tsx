@@ -35,14 +35,17 @@ const Footer = () => {
               At Smile Care Dental Clinic, we're dedicated to providing exceptional dental care in a comfortable environment using the latest technology.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10 focus:ring-2 focus:ring-white focus:ring-offset-1 focus:ring-offset-gray-900">
                 <Facebook className="h-5 w-5" />
+                <span className="sr-only">Facebook</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10 focus:ring-2 focus:ring-white focus:ring-offset-1 focus:ring-offset-gray-900">
                 <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10 focus:ring-2 focus:ring-white focus:ring-offset-1 focus:ring-offset-gray-900">
                 <Twitter className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
               </Button>
             </div>
           </div>
@@ -51,23 +54,18 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-dental-teal transition-colors">Home</Link>
+                <Link to="/" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Home</Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-dental-teal transition-colors">Services</Link>
+                <Link to="/services" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Services</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-dental-teal transition-colors">About Us</Link>
+                <Link to="/about" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">About Us</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-dental-teal transition-colors">Contact</Link>
+                <Link to="/contact" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Contact</Link>
               </li>
-              <li>
-                <Link to="/blog" className="text-gray-300 hover:text-dental-teal transition-colors">Blog</Link>
-              </li>
-              <li>
-                <Link to="/faq" className="text-gray-300 hover:text-dental-teal transition-colors">FAQ</Link>
-              </li>
+              {/* Blog and FAQ links removed as requested */}
             </ul>
           </div>
           
@@ -75,15 +73,15 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-dental-teal shrink-0 mt-0.5" />
+                <MapPin className="h-5 w-5 text-dental-teal shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-gray-300">123 Dental Street, Varanasi, Uttar Pradesh, India</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-dental-teal shrink-0" />
+                <Phone className="h-5 w-5 text-dental-teal shrink-0" aria-hidden="true" />
                 <span className="text-gray-300">+91 979-256-3097</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-dental-teal shrink-0" />
+                <Mail className="h-5 w-5 text-dental-teal shrink-0" aria-hidden="true" />
                 <span className="text-gray-300">info@smilecaredental.com</span>
               </li>
             </ul>
@@ -101,8 +99,12 @@ const Footer = () => {
                 placeholder="Your email address"
                 className="bg-gray-800 border-gray-700 focus:ring-dental-teal"
                 required
+                aria-label="Email address for newsletter"
               />
-              <Button type="submit" className="w-full bg-dental-teal hover:bg-dental-teal/90">
+              <Button 
+                type="submit" 
+                className="w-full bg-dental-teal hover:bg-dental-teal/90 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
+              >
                 Subscribe
               </Button>
             </form>
@@ -115,10 +117,10 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Smile Care Dental Clinic. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy" className="text-gray-400 hover:text-dental-teal text-sm">
+              <Link to="/privacy" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-dental-teal text-sm">
+              <Link to="/terms" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
                 Terms of Service
               </Link>
             </div>

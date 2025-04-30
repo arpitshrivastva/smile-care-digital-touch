@@ -1,15 +1,19 @@
 
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center overflow-hidden">
       {/* Video Background */}
       <video autoPlay muted loop playsInline className="hero-video">
         <source src="/videos/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      
+      {/* Dark overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
       
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
@@ -19,10 +23,10 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
             Your Smile, Our <span className="text-dental-teal">Passion</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
+          <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-md">
             Experience modern dentistry with a gentle touch.
             At Smile Care, we combine cutting-edge technology with compassionate care.
           </p>
@@ -30,9 +34,21 @@ const HeroSection = () => {
             <Button size="lg" className="bg-dental-teal hover:bg-dental-teal/90 text-white font-medium px-8">
               Book Appointment
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white">
-              Our Services
-            </Button>
+            <Link 
+              to="services" 
+              smooth={true} 
+              duration={800} 
+              offset={-100}
+              className="inline-flex"
+            >
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-white/20 hover:bg-white/30 text-white border-white w-full focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+              >
+                Our Services
+              </Button>
+            </Link>
           </div>
         </motion.div>
 
@@ -51,7 +67,7 @@ const HeroSection = () => {
         >
           <img 
             src="/images/3d-tooth.png" 
-            alt="3D tooth model" 
+            alt="3D floating tooth model" 
             className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
           />
         </motion.div>
