@@ -1,7 +1,7 @@
 
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useGLTF, Float, PresentationControls } from '@react-three/drei';
+import { Float, PresentationControls } from '@react-three/drei';
 import { Mesh } from 'three';
 
 export default function ToothModel3D() {
@@ -27,10 +27,10 @@ export default function ToothModel3D() {
         <mesh ref={toothRef} castShadow receiveShadow scale={1.2}>
           <torusGeometry args={[1, 0.4, 16, 32]} />
           <meshStandardMaterial 
-            color="#ffffff" 
+            color={"#ffffff"}
             metalness={0.1}
             roughness={0.2}
-            emissive="#004d40"
+            emissive={"#004d40"}
             emissiveIntensity={0.1}
           />
         </mesh>
