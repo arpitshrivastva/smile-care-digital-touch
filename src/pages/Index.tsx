@@ -36,7 +36,7 @@ const Index = () => {
           <TestimonialsSection />
           
           {/* Call-to-Action Section */}
-          <section className="bg-dental-dark-blue py-16 text-center">
+          <section className="bg-dental-teal py-16 text-center">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Ready to Transform Your Smile?
@@ -46,7 +46,7 @@ const Index = () => {
               </p>
               <Button 
                 size="lg" 
-                className="bg-dental-teal hover:bg-dental-teal/90 text-white px-8 py-6 text-lg font-medium shadow-lg"
+                className="bg-black hover:bg-gray-800 text-white px-8 py-6 text-lg font-medium shadow-lg border-2 border-white"
               >
                 Schedule a Consultation
               </Button>
