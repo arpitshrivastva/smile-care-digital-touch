@@ -10,6 +10,7 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   const { pathname } = useLocation();
@@ -33,6 +34,25 @@ const Index = () => {
           <ServicesSection />
           <AboutSection />
           <TestimonialsSection />
+          
+          {/* Call-to-Action Section */}
+          <section className="bg-dental-dark-blue py-16 text-center">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Transform Your Smile?
+              </h2>
+              <p className="text-xl text-white/80 mb-8">
+                Book an appointment today and experience our exceptional dental care.
+              </p>
+              <Button 
+                size="lg" 
+                className="bg-dental-teal hover:bg-dental-teal/90 text-white px-8 py-6 text-lg font-medium shadow-lg"
+              >
+                Schedule a Consultation
+              </Button>
+            </div>
+          </section>
+          
           <ContactSection />
         </main>
         <Footer />
