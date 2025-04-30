@@ -1,6 +1,6 @@
 
 import { Canvas } from '@react-three/fiber';
-import { Environment, Sparkles } from '@react-three/drei';
+import { Sparkles } from '@react-three/drei';
 import ToothModel3D from './ToothModel3D';
 
 export default function Tooth3DCanvas() {
@@ -15,8 +15,8 @@ export default function Tooth3DCanvas() {
         <color attach="background" args={['transparent']} />
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
+        <hemisphereLight intensity={0.5} color="#ffffff" groundColor="#004d40" />
         <Sparkles count={50} scale={6} size={1} speed={0.3} color="#00e5ff" />
-        <Environment preset="city" />
         <ToothModel3D />
       </Canvas>
     </div>

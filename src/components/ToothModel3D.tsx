@@ -26,12 +26,15 @@ export default function ToothModel3D() {
       <Float rotationIntensity={0.2} floatIntensity={1.5} speed={1.5}>
         <mesh ref={toothRef} castShadow receiveShadow scale={1.2}>
           <torusGeometry args={[1, 0.4, 16, 32]} />
-          <meshStandardMaterial 
+          <meshPhysicalMaterial 
             color={"#ffffff"}
-            metalness={0.1}
-            roughness={0.2}
+            metalness={0.2}
+            roughness={0.1}
+            clearcoat={1}
+            clearcoatRoughness={0.1}
             emissive={"#004d40"}
             emissiveIntensity={0.1}
+            envMapIntensity={0.5}
           />
         </mesh>
       </Float>
