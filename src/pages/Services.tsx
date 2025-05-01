@@ -201,7 +201,10 @@ const Services = () => {
               <p className="text-xl mb-8">
                 Book an appointment today and experience our exceptional dental care.
               </p>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-dental-teal">
+              <Button 
+                size="lg" 
+                className="bg-dental-blue hover:bg-dental-blue/90 text-white border-2 border-white px-8 py-6 text-lg"
+              >
                 Schedule a Consultation
               </Button>
             </div>
