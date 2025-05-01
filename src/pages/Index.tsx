@@ -16,10 +16,10 @@ const Index = () => {
 
   // Scroll to top when the page loads or route changes
   useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    // Handle hash navigation for smooth scrolling
-    if (hash) {
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      // Handle hash navigation for smooth scrolling
       const target = hash.replace("#", "");
       setTimeout(() => {
         scroller.scrollTo(target, {

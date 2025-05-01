@@ -23,16 +23,17 @@ const NavBar = () => {
     };
   }, []);
 
-  const scrollToContact = () => {
-    if (!isHomePage) {
-      window.location.href = '/#contact';
-    }
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled ? 'bg-white/95 shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <RouterLink to="/" className="flex items-center" onClick={() => window.scrollTo(0, 0)}>
+        <RouterLink to="/" className="flex items-center" onClick={handleScrollToTop}>
           <span className={`text-2xl font-bold ${scrolled ? 'text-dental-dark-blue' : 'text-white'}`}>
             Smile<span className="text-dental-teal">Care</span>
           </span>
@@ -43,28 +44,28 @@ const NavBar = () => {
           <RouterLink 
             to="/" 
             className={`font-medium hover:text-dental-teal transition-colors focus:outline-none focus:underline ${scrolled ? 'text-gray-800' : 'text-white'}`}
-            onClick={() => window.scrollTo(0, 0)}
+            onClick={handleScrollToTop}
           >
             Home
           </RouterLink>
           <RouterLink 
             to="/services" 
             className={`font-medium hover:text-dental-teal transition-colors focus:outline-none focus:underline ${scrolled ? 'text-gray-800' : 'text-white'}`}
-            onClick={() => window.scrollTo(0, 0)}
+            onClick={handleScrollToTop}
           >
             Services
           </RouterLink>
           <RouterLink 
             to="/about" 
             className={`font-medium hover:text-dental-teal transition-colors focus:outline-none focus:underline ${scrolled ? 'text-gray-800' : 'text-white'}`}
-            onClick={() => window.scrollTo(0, 0)}
+            onClick={handleScrollToTop}
           >
             About Us
           </RouterLink>
           <RouterLink 
             to="/contact" 
             className={`font-medium hover:text-dental-teal transition-colors focus:outline-none focus:underline ${scrolled ? 'text-gray-800' : 'text-white'}`}
-            onClick={() => window.scrollTo(0, 0)}
+            onClick={handleScrollToTop}
           >
             Contact
           </RouterLink>
@@ -80,7 +81,7 @@ const NavBar = () => {
               <Button className="bg-dental-teal hover:bg-dental-teal/90 focus:ring-2 focus:ring-dental-teal focus:ring-offset-2">Book Appointment</Button>
             </ScrollLink>
           ) : (
-            <RouterLink to="/#contact" onClick={scrollToContact}>
+            <RouterLink to="/#contact">
               <Button className="bg-dental-teal hover:bg-dental-teal/90 focus:ring-2 focus:ring-dental-teal focus:ring-offset-2">Book Appointment</Button>
             </RouterLink>
           )}
@@ -105,7 +106,7 @@ const NavBar = () => {
               className="font-medium text-gray-800 hover:text-dental-teal py-2 focus:outline-none focus:text-dental-teal" 
               onClick={() => {
                 setIsOpen(false);
-                window.scrollTo(0, 0);
+                handleScrollToTop();
               }}
             >
               Home
@@ -115,7 +116,7 @@ const NavBar = () => {
               className="font-medium text-gray-800 hover:text-dental-teal py-2 focus:outline-none focus:text-dental-teal" 
               onClick={() => {
                 setIsOpen(false);
-                window.scrollTo(0, 0);
+                handleScrollToTop();
               }}
             >
               Services
@@ -125,7 +126,7 @@ const NavBar = () => {
               className="font-medium text-gray-800 hover:text-dental-teal py-2 focus:outline-none focus:text-dental-teal" 
               onClick={() => {
                 setIsOpen(false);
-                window.scrollTo(0, 0);
+                handleScrollToTop();
               }}
             >
               About Us
@@ -135,7 +136,7 @@ const NavBar = () => {
               className="font-medium text-gray-800 hover:text-dental-teal py-2 focus:outline-none focus:text-dental-teal" 
               onClick={() => {
                 setIsOpen(false);
-                window.scrollTo(0, 0);
+                handleScrollToTop();
               }}
             >
               Contact
@@ -157,7 +158,6 @@ const NavBar = () => {
                 to="/#contact" 
                 onClick={() => {
                   setIsOpen(false);
-                  scrollToContact();
                 }}
               >
                 <Button className="bg-dental-teal hover:bg-dental-teal/90 w-full focus:ring-2 focus:ring-dental-teal focus:ring-offset-2">Book Appointment</Button>

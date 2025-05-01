@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { Link as RouterLink } from 'react-router-dom';
 
 const About = () => {
   useEffect(() => {
@@ -87,9 +88,11 @@ const About = () => {
                   </div>
                 </div>
                 
-                <Button className="bg-dental-teal hover:bg-dental-teal/90">
-                  Book an Appointment
-                </Button>
+                <RouterLink to="/#contact">
+                  <Button className="bg-dental-teal hover:bg-dental-teal/90">
+                    Book an Appointment
+                  </Button>
+                </RouterLink>
               </motion.div>
             </div>
           </div>
@@ -209,28 +212,6 @@ const About = () => {
                     }}
                   />
                 </motion.div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Team Section - Simplified for initial version */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Our Expert Team</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Meet the skilled professionals dedicated to providing you with the best dental care experience.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Team member cards would go here in a full implementation */}
-              <div className="text-center p-8 bg-gray-50 rounded-lg shadow-sm">
-                <p className="text-lg text-dental-blue font-medium mt-4">Our full team section is coming soon...</p>
-                <p className="text-sm text-gray-500 mt-2">
-                  We're working on introducing you to our entire team of dental professionals
-                </p>
               </div>
             </div>
           </div>

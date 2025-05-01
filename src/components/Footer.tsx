@@ -1,11 +1,18 @@
 
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, MapPin, Phone, Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const { toast } = useToast();
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
@@ -38,16 +45,16 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Home</Link>
+                <RouterLink to="/" onClick={handleScrollToTop} className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Home</RouterLink>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Services</Link>
+                <RouterLink to="/services" onClick={handleScrollToTop} className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Services</RouterLink>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">About Us</Link>
+                <RouterLink to="/about" onClick={handleScrollToTop} className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">About Us</RouterLink>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Contact</Link>
+                <RouterLink to="/contact" onClick={handleScrollToTop} className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Contact</RouterLink>
               </li>
             </ul>
           </div>
@@ -77,12 +84,12 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Smile Care Dental Clinic. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
+              <RouterLink to="/privacy" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
                 Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
+              </RouterLink>
+              <RouterLink to="/terms" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
                 Terms of Service
-              </Link>
+              </RouterLink>
             </div>
           </div>
         </div>
