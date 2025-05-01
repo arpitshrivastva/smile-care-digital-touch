@@ -10,6 +10,7 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Element } from 'react-scroll';
 
 const Index = () => {
   const { pathname } = useLocation();
@@ -30,10 +31,16 @@ const Index = () => {
         <NavBar />
         <main>
           <HeroSection />
-          <ServicesSection />
-          <AboutSection />
+          <Element name="services">
+            <ServicesSection />
+          </Element>
+          <Element name="about">
+            <AboutSection />
+          </Element>
           <TestimonialsSection />
-          <ContactSection />
+          <Element name="contact">
+            <ContactSection />
+          </Element>
         </main>
         <Footer />
         <WhatsAppButton />

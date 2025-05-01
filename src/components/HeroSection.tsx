@@ -31,9 +31,17 @@ const HeroSection = () => {
             At Smile Care, we combine cutting-edge technology with compassionate care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-dental-teal hover:bg-dental-teal/90 text-white font-medium px-8">
-              Book Appointment
-            </Button>
+            <Link 
+              to="contact" 
+              smooth={true} 
+              duration={800} 
+              offset={-100}
+              className="inline-flex"
+            >
+              <Button size="lg" className="bg-dental-teal hover:bg-dental-teal/90 text-white font-medium px-8">
+                Book Appointment
+              </Button>
+            </Link>
             <Link 
               to="services" 
               smooth={true} 
@@ -50,26 +58,6 @@ const HeroSection = () => {
               </Button>
             </Link>
           </div>
-        </motion.div>
-
-        {/* 3D Element Placeholder */}
-        <motion.div
-          className="absolute right-10 bottom-10 md:right-20 md:bottom-20 w-32 h-32 md:w-48 md:h-48"
-          animate={{ 
-            y: [0, -20, 0],
-            rotateY: [0, 180, 360]
-          }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 8,
-            ease: "easeInOut"
-          }}
-        >
-          <img 
-            src="/images/3d-tooth.png" 
-            alt="3D floating tooth model" 
-            className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
-          />
         </motion.div>
       </div>
       
