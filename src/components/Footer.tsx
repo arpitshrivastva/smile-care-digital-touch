@@ -1,6 +1,5 @@
 
-import { Link as RouterLink } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
@@ -55,45 +54,18 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <ScrollLink 
-                  to="home" 
-                  smooth={true} 
-                  duration={800} 
-                  className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal cursor-pointer"
-                >
-                  Home
-                </ScrollLink>
+                <Link to="/" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Home</Link>
               </li>
               <li>
-                <ScrollLink 
-                  to="services" 
-                  smooth={true} 
-                  duration={800} 
-                  className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal cursor-pointer"
-                >
-                  Services
-                </ScrollLink>
+                <Link to="/services" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Services</Link>
               </li>
               <li>
-                <ScrollLink 
-                  to="about" 
-                  smooth={true} 
-                  duration={800} 
-                  className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal cursor-pointer"
-                >
-                  About Us
-                </ScrollLink>
+                <Link to="/about" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">About Us</Link>
               </li>
               <li>
-                <ScrollLink 
-                  to="contact" 
-                  smooth={true} 
-                  duration={800} 
-                  className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal cursor-pointer"
-                >
-                  Contact
-                </ScrollLink>
+                <Link to="/contact" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Contact</Link>
               </li>
+              {/* Blog and FAQ links removed as requested */}
             </ul>
           </div>
           
@@ -145,12 +117,12 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Smile Care Dental Clinic. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <RouterLink to="/privacy" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
+              <Link to="/privacy" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
                 Privacy Policy
-              </RouterLink>
-              <RouterLink to="/terms" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
+              </Link>
+              <Link to="/terms" className="text-gray-400 hover:text-dental-teal text-sm focus:outline-none focus:text-dental-teal">
                 Terms of Service
-              </RouterLink>
+              </Link>
             </div>
           </div>
         </div>

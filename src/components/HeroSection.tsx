@@ -1,7 +1,7 @@
+
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import Tooth3DCanvas from './Tooth3DCanvas';
 
 const HeroSection = () => {
   return (
@@ -52,8 +52,25 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Replace static 3D tooth image with interactive 3D model */}
-        <Tooth3DCanvas />
+        {/* 3D Element Placeholder */}
+        <motion.div
+          className="absolute right-10 bottom-10 md:right-20 md:bottom-20 w-32 h-32 md:w-48 md:h-48"
+          animate={{ 
+            y: [0, -20, 0],
+            rotateY: [0, 180, 360]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 8,
+            ease: "easeInOut"
+          }}
+        >
+          <img 
+            src="/images/3d-tooth.png" 
+            alt="3D floating tooth model" 
+            className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+          />
+        </motion.div>
       </div>
       
       {/* Scroll indicator */}
