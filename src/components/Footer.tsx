@@ -1,32 +1,16 @@
 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, MapPin, Phone, Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const { toast } = useToast();
-  
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-    
-    // Simple form validation
-    if (email) {
-      toast({
-        title: "Success!",
-        description: "You've been subscribed to our newsletter.",
-      });
-      form.reset();
-    }
-  };
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <h3 className="text-2xl font-bold mb-6">
               Smile<span className="text-dental-teal">Care</span>
@@ -65,7 +49,6 @@ const Footer = () => {
               <li>
                 <Link to="/contact" className="text-gray-300 hover:text-dental-teal transition-colors focus:outline-none focus:text-dental-teal">Contact</Link>
               </li>
-              {/* Blog and FAQ links removed as requested */}
             </ul>
           </div>
           
@@ -85,29 +68,6 @@ const Footer = () => {
                 <span className="text-gray-300">info@smilecaredental.com</span>
               </li>
             </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray-300 mb-4">
-              Subscribe to our newsletter for dental tips and special offers.
-            </p>
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <Input
-                type="email"
-                name="email"
-                placeholder="Your email address"
-                className="bg-gray-800 border-gray-700 focus:ring-dental-teal"
-                required
-                aria-label="Email address for newsletter"
-              />
-              <Button 
-                type="submit" 
-                className="w-full bg-dental-teal hover:bg-dental-teal/90 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
-              >
-                Subscribe
-              </Button>
-            </form>
           </div>
         </div>
         

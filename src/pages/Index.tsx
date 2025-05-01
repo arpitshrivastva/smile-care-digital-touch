@@ -4,21 +4,33 @@ import { useLocation } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import HeroSection from '../components/HeroSection';
 import ServicesSection from '../components/ServicesSection';
-import AboutSection from '../components/AboutSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Element } from 'react-scroll';
+import { Element, scroller } from 'react-scroll';
 
 const Index = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   // Scroll to top when the page loads or route changes
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+    
+    // Handle hash navigation for smooth scrolling
+    if (hash) {
+      const target = hash.replace("#", "");
+      setTimeout(() => {
+        scroller.scrollTo(target, {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+          offset: -100
+        });
+      }, 100);
+    }
+  }, [pathname, hash]);
 
   return (
     <AnimatePresence>
@@ -33,9 +45,6 @@ const Index = () => {
           <HeroSection />
           <Element name="services">
             <ServicesSection />
-          </Element>
-          <Element name="about">
-            <AboutSection />
           </Element>
           <TestimonialsSection />
           <Element name="contact">
